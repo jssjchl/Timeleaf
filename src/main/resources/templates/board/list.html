@@ -45,24 +45,20 @@
         </table>
     </div>
     <br/>
-    <nav aria-label="Page navigation" style="text-align: center;">
+    <nav aria-label="Page navigation" style="text-align:center;">
         <ul class="pagination"
-            th:with="startNumber=${T(Math).floor(boardlist.number/10)}*10+1, endNumber=(${boardlist.totalPages} > ${startNumber} +9) ? ${startNumber}+9 : ${boardList.totalPages}">
+            th:with="startNumber=${T(Math).floor(boardlist.number/10)}*10+1, endNumber=(${boardlist.totalPages} > ${startNumber}+9) ? ${startNumber}+9 : ${boardlist.totalPages}">
             <li><a aria-label="Previous" href="/board/list?page=1">&laquo;</a></li>
-
             <li th:style="${boardlist.first} ? 'display:none'">
                 <a th:href="@{/board/list(page=${boardlist.number})}">&lsaquo;</a>
             </li>
-
             <li th:each="page :${#numbers.sequence(startNumber, endNumber)}"
-                th:class="(${page} == ${boardlist.number}+1) ? 'active' ">
+                th:class="(${page} == ${boardlist.number}+1) ? 'active'">
                 <a th:href="@{/board/list(page=${page})}" th:text="${page}"><span class="sr-only"></span></a>
             </li>
-
             <li th:style="${boardlist.last} ? 'display:none'">
                 <a th:href="@{/board/list(page=${boardlist.number}+2)}">&rsaquo;</a>
             </li>
-
             <li>
                 <a aria-label="Next" th:href="@{/board/list(page=${boardlist.totalPages})}">&raquo;</a>
             </li>

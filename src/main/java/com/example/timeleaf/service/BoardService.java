@@ -3,6 +3,7 @@ package com.example.timeleaf.service;
 import com.example.timeleaf.domain.Board;
 import com.example.timeleaf.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BoardService {
 
+    @Autowired
     private final BoardRepository boardRepository;
 
     /*
