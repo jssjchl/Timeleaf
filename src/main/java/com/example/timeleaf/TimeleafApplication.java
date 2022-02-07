@@ -42,8 +42,9 @@ public class TimeleafApplication {
                     .password("1111")
                     .email("jssjchl@naver.com")
                     .build());
-
+        //user db에 추가될 부분
             IntStream.rangeClosed(1,200).forEach(index ->
+                    //1부터 200까지 200개의 데이터가 들어간다.
                     boardRepository.save(Board.builder()
                             .title(String.format("제목 %s", index))
                             .subTitle(String.format("부제목 %s", index))
